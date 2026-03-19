@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""10-student module"""
+"""10-student module
+
+Defines a Student class and a method to return its dictionary representation
+with optional attribute filtering.
+"""
+
 
 class Student:
     """Student class with attribute filter"""

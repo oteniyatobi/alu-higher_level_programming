@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""9-student module"""
+"""9-student module
+
+Defines a Student class and a method to return its dictionary representation.
+"""
+
 
 class Student:
     """Student class"""
