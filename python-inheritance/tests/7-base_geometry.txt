@@ -1,6 +1,7 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 >>> bg = BaseGeometry()
+
 >>> bg.integer_validator("age", 1)
 
 >>> bg.integer_validator("age", 0)
@@ -42,3 +43,8 @@ TypeError: age must be an integer
 Traceback (most recent call last):
 ...
 TypeError: age must be an integer
+
+>>> bg.integer_validator("age")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
