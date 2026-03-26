@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Pascal triangle"""
+"""Pascal's triangle"""
+
 
 def pascal_triangle(n):
-    """Return Pascal triangle"""
+    """Return a list of lists of integers representing Pascal’s triangle"""
     if n <= 0:
         return []
 

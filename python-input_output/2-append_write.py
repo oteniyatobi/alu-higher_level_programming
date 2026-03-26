@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Appends text to a file"""
+"""Append text to a file"""
+
 
 def append_write(filename="", text=""):
     """Append text and return number of characters added"""

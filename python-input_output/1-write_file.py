@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""Writes a string to a file and returns number of characters"""
+"""Write a string to a file"""
+
 
 def write_file(filename="", text=""):
-    """Write text to file and return number of characters"""
+    """Write text to a file and return number of characters"""
     with open(filename, "w", encoding="utf-8") as f:
         return f.write(text)

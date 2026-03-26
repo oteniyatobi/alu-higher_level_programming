@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Student class"""
 
+
 class Student:
     """Defines a student"""
 
@@ -11,11 +12,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """Return dictionary representation"""
+        """Return dictionary representation of Student"""
         if isinstance(attrs, list):
             new_dict = {}
             for key in attrs:
-                if hasattr(self, key):
+                if isinstance(key, str) and hasattr(self, key):
                     new_dict[key] = getattr(self, key)
             return new_dict
         return self.__dict__
