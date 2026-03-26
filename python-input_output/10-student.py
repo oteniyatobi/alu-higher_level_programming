@@ -1,21 +1,21 @@
 #!/usr/bin/python3
-"""10-student module
-
-Defines a Student class and a method to return its dictionary representation
-with optional attribute filtering.
-"""
-
+"""Student class"""
 
 class Student:
-    """Student class with attribute filter"""
+    """Defines a student"""
 
     def __init__(self, first_name, last_name, age):
+        """Initialize student"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """Returns dictionary representation, optionally filtering attributes"""
+        """Return dictionary representation"""
         if isinstance(attrs, list):
-            return {k: v for k, v in self.__dict__.items() if k in attrs}
-        return self.__dict__.copy()
+            new_dict = {}
+            for key in attrs:
+                if hasattr(self, key):
+                    new_dict[key] = getattr(self, key)
+            return new_dict
+        return self.__dict__
