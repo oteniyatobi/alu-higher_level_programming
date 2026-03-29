@@ -1,4 +1,3 @@
--- 0-privileges.sql: list all privileges for users user_0d_1 and user_0d_2
-
+-- lists privileges of users
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
 SHOW GRANTS FOR 'user_0d_2'@'localhost';
