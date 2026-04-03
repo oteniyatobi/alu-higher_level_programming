@@ -21,7 +21,8 @@
       "Bash(py -3 -m unittest tests.6-max_integer_test)",
       "Bash(py -3 -m doctest ./tests/3-say_my_name.txt)",
       "Bash(py -3 -m doctest ./tests/4-print_square.txt)",
-      "Bash(py -3 -m doctest ./tests/5-text_indentation.txt)"
+      "Bash(py -3 -m doctest ./tests/5-text_indentation.txt)",
+      "Bash(py -3 -m unittest discover tests)"
     ]
   }
 }
