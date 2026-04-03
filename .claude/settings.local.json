@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(chmod +x:*)"
+      "Bash(chmod +x:*)",
+      "Bash(python3 -m pycodestyle 8-json_api.py)",
+      "Bash(python3 -m pep8 8-json_api.py)",
+      "Bash(file *.py)",
+      "Bash(xxd 0-hbtn_status.py)",
+      "Bash(pip3 install:*)",
+      "Bash(pip install:*)",
+      "Bash(python3 -m pycodestyle *.py)",
+      "Bash(py -3 -m pycodestyle *.py)"
     ]
   }
 }
