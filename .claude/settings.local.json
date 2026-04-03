@@ -9,7 +9,8 @@
       "Bash(pip3 install:*)",
       "Bash(pip install:*)",
       "Bash(python3 -m pycodestyle *.py)",
-      "Bash(py -3 -m pycodestyle *.py)"
+      "Bash(py -3 -m pycodestyle *.py)",
+      "Bash(ls -la *.py)"
     ]
   }
 }
