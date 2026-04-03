@@ -1,3 +1,3 @@
 #!/bin/bash
-# Sends a GET request with X-HolbertonSchool-User-Id header value 98
-curl --header "X-HolbertonSchool-User-Id: 98" "$1"
+# Sends a request with X-HolbertonSchool-User-Id header value 98
+curl -s -H "X-HolbertonSchool-User-Id: 98" "$1"
