@@ -1,0 +1,64 @@
+================================
+Tests for 5-text_indentation.py
+================================
+
+Import the function:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Normal usage with period:
+    >>> text_indentation("Hello. World.")
+    Hello.
+    <BLANKLINE>
+    World.
+    <BLANKLINE>
+
+Question mark:
+    >>> text_indentation("How are you?")
+    How are you?
+    <BLANKLINE>
+
+Colon:
+    >>> text_indentation("Note: this is important")
+    Note:
+    <BLANKLINE>
+    this is important
+
+Multiple delimiters:
+    >>> text_indentation("Hello. How are you? I am fine: thanks.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I am fine:
+    <BLANKLINE>
+    thanks.
+    <BLANKLINE>
+
+Leading spaces after delimiter are stripped:
+    >>> text_indentation("Hi.   World")
+    Hi.
+    <BLANKLINE>
+    World
+
+Empty string:
+    >>> text_indentation("")
+
+No delimiter - prints as-is:
+    >>> text_indentation("Hello World")
+    Hello World
+
+TypeError - not a string:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(["hello"])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string

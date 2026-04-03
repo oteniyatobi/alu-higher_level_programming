@@ -1,0 +1,47 @@
+============================
+Tests for 3-say_my_name.py
+============================
+
+Import the function:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Normal usage with both names:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+Default last_name (empty string):
+    >>> say_my_name("Bob")
+    My name is Bob
+
+    >>> say_my_name("Alice", "")
+    My name is Alice
+
+TypeError for non-string first_name:
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(["John"], "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+TypeError for non-string last_name:
+    >>> say_my_name("John", 42)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
