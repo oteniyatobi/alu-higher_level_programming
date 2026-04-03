@@ -3,6 +3,8 @@
 import unittest
 import io
 import sys
+import os
+import json
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -211,6 +213,73 @@ class TestSquare(unittest.TestCase):
         """Test TypeError when size is None."""
         with self.assertRaises(TypeError):
             Square(None)
+
+    def test_save_to_file_none(self):
+        """Test Square.save_to_file with None saves empty list."""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        os.remove("Square.json")
+
+    def test_save_to_file_empty(self):
+        """Test Square.save_to_file with empty list saves empty list."""
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        os.remove("Square.json")
+
+    def test_save_to_file_one(self):
+        """Test Square.save_to_file with one Square instance."""
+        s = Square(1, 0, 0, 89)
+        Square.save_to_file([s])
+        with open("Square.json", "r") as f:
+            content = json.loads(f.read())
+        self.assertEqual(len(content), 1)
+        self.assertEqual(content[0]['id'], 89)
+        os.remove("Square.json")
+
+    def test_load_from_file_no_file(self):
+        """Test Square.load_from_file when file does not exist."""
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        result = Square.load_from_file()
+        self.assertEqual(result, [])
+
+    def test_load_from_file_exists(self):
+        """Test Square.load_from_file when file exists."""
+        s = Square(5, 0, 0, 1)
+        Square.save_to_file([s])
+        result = Square.load_from_file()
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0].size, 5)
+        self.assertEqual(result[0].id, 1)
+        os.remove("Square.json")
+
+    def test_create_id(self):
+        """Test Square.create with only id."""
+        s = Square.create(**{'id': 89})
+        self.assertEqual(s.id, 89)
+
+    def test_create_id_size(self):
+        """Test Square.create with id and size."""
+        s = Square.create(**{'id': 89, 'size': 1})
+        self.assertEqual(s.id, 89)
+        self.assertEqual(s.size, 1)
+
+    def test_create_id_size_x(self):
+        """Test Square.create with id, size, and x."""
+        s = Square.create(**{'id': 89, 'size': 1, 'x': 2})
+        self.assertEqual(s.id, 89)
+        self.assertEqual(s.size, 1)
+        self.assertEqual(s.x, 2)
+
+    def test_create_all(self):
+        """Test Square.create with all attributes."""
+        s = Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
+        self.assertEqual(s.id, 89)
+        self.assertEqual(s.size, 1)
+        self.assertEqual(s.x, 2)
+        self.assertEqual(s.y, 3)
 
 
 if __name__ == '__main__':
