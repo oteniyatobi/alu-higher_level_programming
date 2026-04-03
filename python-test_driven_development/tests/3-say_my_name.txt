@@ -13,11 +13,17 @@ Normal usage with both names:
     My name is Walter White
 
 Default last_name (empty string):
-    >>> say_my_name("Bob")
+    >>> say_my_name("Bob") # doctest: +NORMALIZE_WHITESPACE
     My name is Bob
 
-    >>> say_my_name("Alice", "")
+    >>> say_my_name("Alice", "") # doctest: +NORMALIZE_WHITESPACE
     My name is Alice
+
+Missing one argument:
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
 TypeError for non-string first_name:
     >>> say_my_name(12, "White")
