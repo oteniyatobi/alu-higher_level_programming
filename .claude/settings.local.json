@@ -10,7 +10,18 @@
       "Bash(pip install:*)",
       "Bash(python3 -m pycodestyle *.py)",
       "Bash(py -3 -m pycodestyle *.py)",
-      "Bash(ls -la *.py)"
+      "Bash(ls -la *.py)",
+      "Bash(python3 -m doctest ./tests/0-add_integer.txt -v)",
+      "Bash(py -3 -m doctest ./tests/0-add_integer.txt -v)",
+      "Bash(py -3 -c ':*)",
+      "Bash(py -3 -m doctest ./tests/2-matrix_divided.txt -v)",
+      "Bash(py -3 -m doctest ./tests/3-say_my_name.txt -v)",
+      "Bash(py -3 -m doctest ./tests/4-print_square.txt -v)",
+      "Bash(py -3 -m doctest ./tests/5-text_indentation.txt -v)",
+      "Bash(py -3 -m unittest tests.6-max_integer_test)",
+      "Bash(py -3 -m doctest ./tests/3-say_my_name.txt)",
+      "Bash(py -3 -m doctest ./tests/4-print_square.txt)",
+      "Bash(py -3 -m doctest ./tests/5-text_indentation.txt)"
     ]
   }
 }
